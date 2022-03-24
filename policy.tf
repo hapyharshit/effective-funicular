@@ -1,21 +1,5 @@
 resource "aws_s3_bucket_policy" "harshit_bucket_policy" {
   bucket = aws_s3_bucket.harshit-bucket.id
 
-  policy = <<POLICY
-{
-    "Version": "2012-10-17",
-    "Id": "Policy1609848560531",
-    "Statement": [
-        {
-            "Sid": "Stmt1609848558282",
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": "arn:aws:iam::333567660568:user/harshit"
-            },
-            "Action": "s3:Put*",
-            "Resource": "arn:aws:s3:::harshit-bucket/*"
-        }
-    ]
-}
-POLICY
+  policy = "{\"Statement\":{\"Action\":\"es:*\",\"Effect\":\"Allow\",\"Principal\":\"\\u003cvalid_policy_principal\\u003e\",\"Resource\":\"arn:aws:es:ca-central-1:641885301384:domain/ptshggaed1/*\"},\"Version\":\"2012-10-17\"}"
 }
